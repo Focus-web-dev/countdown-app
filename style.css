@@ -27,13 +27,9 @@ aside {
 
 html,
 body {
-  height: 100%;
-  width: 100%;
+  font-family: 'Poppins';
   line-height: 1;
   font-size: 14px;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
 }
 
 button,
@@ -76,12 +72,274 @@ h6 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
+
+p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: var(--black);
+}
+
+input {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    border: 1px solid var(--black);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.4);
+
+    outline: none;
+}
 /*--------------------*/
 
 /* COLORS 
 =====================*/
 :root {
     --blue: #162C4E;
+    --blueHover: #0f1e35;
+
     --red: #DF2224;
+    --redHover: #b91b1e;
+
     --black: #000000CC;
+    --white: #FFF;
+}
+
+/* VECTORS
+=====================*/
+
+.vector-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 25vw;
+}
+
+.vector-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 16vw;
+}
+
+/* HEADER + LOGO
+=====================*/
+
+.header {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 60px;
+}
+
+.logo {
+    width: 190px;
+    height: 60px;
+}
+
+/* MAIN
+=====================*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 93px;
+}
+
+/* TEXT
+============*/
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text h1 {
+    font-weight: 700;
+    font-size: 72px;
+
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 104%;
+
+    color: var(--blue);
+    opacity: 0.39;
+}
+
+.text p {
+    margin-top: 8px;
+
+    max-width: 423px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-align: center;
+    color: var(--black);
+}
+
+/* COUNTDOWN
+============*/
+
+.countdown {
+    margin-top: 32px;
+}
+
+.countdown ul {
+    width: 588px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.countdown li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.numbers {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 100%;
+
+    color: var(--blue);
+}
+
+.type {
+    margin-top: 3px;
+
+    width: 132px;
+    height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(svg/date-vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.type span {
+    font-size: 16px;
+    line-height: 100%;
+
+    color: var(--white);
+}
+
+/* OFFER
+============*/
+
+.offer {
+    margin-top: 72px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offer .button {
+    margin-top: 12px;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 240px;
+    height: 60px;
+    padding: 0 20px;
+    border-radius: 40px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: var(--white);
+    background-color: var(--blue);
+
+    transition: background-color .3s;
+}
+
+.button:hover {
+    background: var(--blueHover);
+}
+
+/* FOOTER 
+=========================*/
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 192px;
+
+    background-color: var(--blue);
+}
+
+@media screen and (max-height: 950px) {
+    footer {
+        margin-top: 75px;
+        position: unset;
+        bottom: unset;
+        left: unset;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.email {
+    width: 100%;
+    max-width: 440px;
+    height: 60px;
+
+    padding: 0 20px;
+    border-radius: 40px;
+}
+
+button {
+    width: 43px;
+    height: 43px;
+
+    transform: translateX(-50px);
+
+    background-color: var(--red);
+    border-radius: 50%;
+
+    transition: background-color .3s;
+}
+
+button:hover {
+    background-color: var(--redHover);
 }
