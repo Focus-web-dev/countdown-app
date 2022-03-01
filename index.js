@@ -39,6 +39,22 @@ if (seconds > 0) {
     setInterval(timer, 1000);
 }
 
+/* POPUP HANDLE RESPONSE
+========================*/
+
+function handleResponse (status) {
+    if (status) {
+        document.getElementById('status').innerHTML = "Success!";
+        document.getElementById('status-description').innerHTML = "You have successfully subscribed to the email newsletter";
+    }
+    else {
+        document.getElementById('status').innerHTML = "Error!";
+        document.getElementById('status-description').innerHTML = "Something went wrong :(";
+    }
+
+    document.getElementById('popup').classList.remove('invise');
+}
+
 /* FORM
 ============*/
 
@@ -60,16 +76,16 @@ $("#mail-form").submit(function(e) {
             data: $(this).serialize(),
             success: function (data) {
                 if (!data) {
-                    alert('Error!');
+                    handleResponse(false);
                 }
                 else {
-                    popup.classList.remove('invise');
+                    handleResponse(true);
                     $('#mail-form').trigger("reset");
                 }
                 $(this).prop('disabled', false);
             },
             error: function () {
-                alert('Error!');
+                handleResponse(false);
                 $(this).prop('disabled', false);
             }      
         })
