@@ -42,21 +42,16 @@ if (seconds > 0) {
 /* FORM
 ============*/
 
-$("#sendMail").on("click"), function() {
-    let email = $("email").val().trim();
+$("#form").submit(function(e) {
+    e.preventDefault();
 
-    $.ajax ({
-        url: 'ajax/mail.php',
-        type: 'POST',
+    $.ajax({
+        url: $(this).attr('action'),
+        type: $(this).attr('method'),
+        data: (new FormData(this)),
         cache: false,
-        data: email,
-        dataType: 'html',
-        beforeSend: function () {
-            $("send-mail").prop("disabled", true);
-        },
-        success: function (data) {
-            alert(data);
-            $("send-mail").prop("disabled", false);
-        },
+        processData: false,
+    }).done(function (data) {
+        console.log(data);
     })
-}
+}) 
