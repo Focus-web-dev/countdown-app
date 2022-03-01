@@ -73,6 +73,36 @@ h6 {
   font-weight: 700;
 }
 
+/* GLOBAL STYLES
+======================*/
+
+h1 {
+    font-weight: 700;
+    font-size: 72px;
+
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 104%;
+
+    color: var(--blue);
+    opacity: 0.39;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 100%;
+
+    color: var(--blue);
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 104%;
+
+    color: var(--blue);
+}
+
 p {
     font-weight: 400;
     font-size: 18px;
@@ -92,6 +122,33 @@ input {
 
     outline: none;
 }
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: 240px;
+    height: 60px;
+    padding: 0 20px;
+    border-radius: 40px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: var(--white);
+    background-color: var(--blue);
+
+    transition: background-color .3s;
+}
+
+.button:hover {
+    background: var(--blueHover);
+}
+
 /*--------------------*/
 
 /* COLORS 
@@ -110,20 +167,32 @@ input {
 /* VECTORS
 =====================*/
 
-.vector-1 {
+.vector-1, .vector-2 {
     position: absolute;
     top: 0;
+}
+
+.vector-1 {
     left: 0;
 
-    width: 25vw;
+    width: 40%;
+    height: 40%;
+
+    background-image: url(svg/vector-1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .vector-2 {
-    position: absolute;
-    top: 0;
     right: 0;
 
-    width: 16vw;
+    width: 40%;
+    height: 40%;
+
+    background-image: url(svg/vector-2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 }
 
 /* HEADER + LOGO
@@ -166,29 +235,10 @@ input {
     align-items: center;
 }
 
-.text h1 {
-    font-weight: 700;
-    font-size: 72px;
-
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 104%;
-
-    color: var(--blue);
-    opacity: 0.39;
-}
-
 .text p {
     margin-top: 8px;
-
     max-width: 423px;
-
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-
     text-align: center;
-    color: var(--black);
 }
 
 /* COUNTDOWN
@@ -211,16 +261,8 @@ input {
     align-items: center;
 }
 
-.dots {
-    margin: 0 5px;
-}
-
-.numbers {
-    font-weight: 600;
-    font-size: 72px;
-    line-height: 100%;
-
-    color: var(--blue);
+.countdown li:nth-child(2n) {
+    margin: 0 10px;
 }
 
 .type {
@@ -257,43 +299,15 @@ input {
     align-items: center;
 }
 
-.offer .button {
+.offer a {
     margin-top: 12px;
-}
-
-.button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    max-width: 240px;
-    height: 60px;
-    padding: 0 20px;
-    border-radius: 40px;
-
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 150%;
-
-    color: var(--white);
-    background-color: var(--blue);
-
-    transition: background-color .3s;
-}
-
-.button:hover {
-    background: var(--blueHover);
 }
 
 /* FOOTER 
 =========================*/
 
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    margin-top: 75px;
 
     display: flex;
     justify-content: center;
@@ -305,15 +319,6 @@ footer {
     background-color: var(--blue);
 }
 
-@media screen and (max-height: 950px) {
-    footer {
-        margin-top: 75px;
-        position: unset;
-        bottom: unset;
-        left: unset;
-    }
-}
-
 .form {
     display: flex;
     justify-content: center;
@@ -321,7 +326,8 @@ footer {
     width: 100%;
 }
 
-.email {
+.form input {
+    transform: translateX(50px);
     width: 100%;
     max-width: 440px;
     height: 60px;
@@ -334,7 +340,7 @@ button {
     width: 43px;
     height: 43px;
 
-    transform: translateX(-50px);
+    z-index: 1;
 
     background-color: var(--red);
     border-radius: 50%;
@@ -382,13 +388,6 @@ button:hover {
     border: 1px solid rgba(19, 89, 120, 0.07);
     border-radius: 2px;
 
-}
-
-.window h3 {
-    font-size: 36px;
-    line-height: 104%;
-
-    color: var(--blue);
 }
 
 .window p {
@@ -448,4 +447,115 @@ button:hover {
 .error {
     transition: box-shadow .3s;
     box-shadow: 0px 0px 25px #b91b1e94;
+}
+
+/* MAX-WIDTH 768px
+===========================*/
+
+@media screen and (max-width: 768px) {
+
+    .vector-1, .vector-2 {
+        width: 40vw;
+    }
+
+    .header {
+        margin-top: 100px;
+    }
+
+    .main {
+        margin-top: 166px;
+    }
+
+    .countdown {
+        margin-top: 40px;
+    }
+
+    .offer {
+        margin-top: 40px;
+    }
+
+    footer {
+        margin-top: 170px;
+        height: 160px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 104%;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .text p {
+        margin-top: 20px;
+        max-width: 286px;
+    }
+
+    h2 {
+        font-size: 36px;
+        line-height: 100%;
+    }
+
+    .countdown li:nth-child(2n) {
+        margin: 0 15px;
+    }
+
+    .type {
+        width: 64px;
+        height: 40px;
+
+        background-image: url('svg/date-vector-768.svg');
+    }
+
+    .type span {
+        font-size: 12px;
+        line-height: 100%;
+    }
+
+    .offer a {
+        margin-top: 15px;
+    }
+
+    .form {
+        transform: translateX(-20px);
+    }
+
+    .form input {
+        transform: translateX(40px);
+        max-width: 360px;
+        height: 40px;
+
+        font-size: 14px;
+    }
+
+    button {
+        width: 33px;
+        height: 33px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .vector-1 {
+        background-image: url(svg/vector-1-768.svg);
+    }
+
+    .vector-2 {
+        background-image: url(svg/vector-2-768.svg);
+
+        background-position: unset;
+    }
+
+    .vector-1, .vector-2 {
+        width: 30%;
+    }
 }

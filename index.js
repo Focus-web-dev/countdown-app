@@ -95,3 +95,12 @@ $("#mail-form").submit(function(e) {
         $('#email').addClass('error');
     }
 }) 
+
+/* MEDIA 
+================*/
+if (window.matchMedia('(max-width: 768px)')) {
+    document.getElementById('days').innerHTML = "DD";
+    document.getElementById('hours').innerHTML = "HH";
+    document.getElementById('minutes').innerHTML = "MM";
+    document.getElementById('seconds').innerHTML = "SS";
+}
