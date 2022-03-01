@@ -176,7 +176,7 @@ input {
     left: 0;
 
     width: 40%;
-    height: 40%;
+    height: 30%;
 
     background-image: url(svg/vector-1.svg);
     background-repeat: no-repeat;
@@ -187,7 +187,7 @@ input {
     right: 0;
 
     width: 40%;
-    height: 40%;
+    height: 30%;
 
     background-image: url(svg/vector-2.svg);
     background-repeat: no-repeat;
@@ -308,7 +308,6 @@ input {
 
 footer {
     margin-top: 75px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,6 +451,12 @@ button:hover {
 /* MAX-WIDTH 768px
 ===========================*/
 
+@media screen and (max-width: 996px) {
+    .text h1 {
+        max-width: 700px;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     .vector-1, .vector-2 {
@@ -557,5 +562,58 @@ button:hover {
 
     .vector-1, .vector-2 {
         width: 30%;
+    }
+}
+
+/* MAX-WIDTH 425x
+===========================*/
+
+@media screen and (max-width: 425px) {
+    .header {
+        margin-top: 80px;
+    }
+
+    .main {
+        margin-top: 65px;
+    }
+
+    .text p {
+        margin-top: 15px;
+    }
+
+    .countdown li:nth-child(2n) {
+        margin: 0 5px;
+    }
+
+    footer {
+        margin-top: 85px;
+
+        height: 140px;
+    }
+
+    .form input {
+        max-width: 280px;
+
+        font-size: 12px;
+    }
+
+    .vector-1 {
+        background-image: url(svg/vector-1-360.svg);
+        width: 50%;
+    }
+
+    .vector-2 {
+        background-image: url(svg/vector-2-360.svg);
+        width: 50%;
+
+        background-position-x: right;
+    }
+}
+
+@media screen and (max-width: 425px) and (min-height: 788px) {
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
