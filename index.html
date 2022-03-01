@@ -42,7 +42,7 @@
 
                 <li>
 
-                    <h2 class="numbers">92</h2>
+                    <h2 class="numbers" id="days-element">00</h2>
 
                     <div class="type">
 
@@ -60,7 +60,7 @@
 
                 <li>
 
-                    <h2 class="numbers">11</h2>
+                    <h2 class="numbers" id="hours-element">00</h2>
 
                     <div class="type">
 
@@ -78,7 +78,7 @@
 
                 <li>
 
-                    <h2 class="numbers">41</h2>
+                    <h2 class="numbers" id="minutes-element">00</h2>
 
                     <div class="type">
 
@@ -96,7 +96,7 @@
 
                 <li>
 
-                    <h2 class="numbers">48</h2>
+                    <h2 class="numbers" id="seconds-element">00</h2>
 
                     <div class="type">
 
@@ -114,7 +114,7 @@
 
             <p>Check our event page when you wait:</p>
 
-            <a href="https://focus-web-dev.github.io/curriculum-vitae/" class="button">
+            <a href="https://focus-web-dev.github.io/curriculum-vitae/" target="_blank" class="button">
 
                 Go to the event
                 <img src="svg/arrow.svg" alt="arrow">
@@ -127,7 +127,7 @@
 
     <footer>
 
-        <form action="" method="" class="form">
+        <div class="form">
 
             <input type="text" class="email" placeholder="Enter your Email and get notified
             ">
@@ -136,14 +136,14 @@
                 <img src="svg/arrow.svg" alt="arrow">
             </button>
 
-        </form>
+        </div>
 
     </footer>
 
     <img src="svg/vector-1.svg" alt="vector-1" class="vector-1">
     <img src="svg/vector-2.svg" alt="vector-2" class="vector-2">
 
-    <div class="popup">
+    <div class="popup invise" id="popup">
 
         <div class="window">
 
@@ -151,9 +151,9 @@
 
             <p>You have successfully subscribed to the email newsletter</p>
 
-            <button class="close-btn">Close</button>
+            <button class="close-btn" id="close-popup">Close</button>
 
-            <img src="svg/close.svg" alt="close" class="close">
+            <img src="svg/close.svg" alt="close" class="close" id="crosshair-close-popup">
 
         </div>
 

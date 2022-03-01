@@ -199,8 +199,6 @@ input {
 }
 
 .countdown ul {
-    width: 588px;
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -211,6 +209,14 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* .countdown li:not(.dots) {
+    margin-right: 10px;
+} */
+
+.dots {
+    margin: 0 5px;
 }
 
 .numbers {
@@ -348,7 +354,7 @@ button:hover {
 =================*/
 
 .popup {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 10;
@@ -433,4 +439,12 @@ button:hover {
 
 .close:hover {
     opacity: 1;
+}
+
+
+/* MODIFICATORS
+======================*/
+
+.invise {
+    display: none !important;
 }
