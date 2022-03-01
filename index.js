@@ -1,3 +1,23 @@
+/* MEDIA 
+================*/
+function myFunction(x) {
+    if (x.matches) {
+        document.getElementById('days').innerHTML = "DD";
+        document.getElementById('hours').innerHTML = "HH";
+        document.getElementById('minutes').innerHTML = "MM";
+        document.getElementById('seconds').innerHTML = "SS";
+    } else {
+        document.getElementById('days').innerHTML = "Days";
+        document.getElementById('hours').innerHTML = "Hours";
+        document.getElementById('minutes').innerHTML = "Minutes";
+        document.getElementById('seconds').innerHTML = "Seconds";
+    }
+}
+  
+let x = window.matchMedia("(max-width: 768px)");
+myFunction(x);
+x.addListener(myFunction);
+
 /* CLOSE POPUP
 ======================*/
 const popup = document.getElementById('popup');
@@ -94,13 +114,4 @@ $("#mail-form").submit(function(e) {
     else {
         $('#email').addClass('error');
     }
-}) 
-
-/* MEDIA 
-================*/
-if (window.matchMedia('(max-width: 768px)')) {
-    document.getElementById('days').innerHTML = "DD";
-    document.getElementById('hours').innerHTML = "HH";
-    document.getElementById('minutes').innerHTML = "MM";
-    document.getElementById('seconds').innerHTML = "SS";
-}
+})
