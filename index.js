@@ -42,16 +42,40 @@ if (seconds > 0) {
 /* FORM
 ============*/
 
-$("#form").submit(function(e) {
+$("#mail-form").submit(function(e) {
     e.preventDefault();
 
-    $.ajax({
-        url: $(this).attr('action'),
-        type: $(this).attr('method'),
-        data: (new FormData(this)),
-        cache: false,
-        processData: false,
-    }).done(function (data) {
-        console.log(data);
-    })
+    const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+    if (EMAIL_REGEXP.test($('#email').val())) {
+
+        $('#email').removeClass('error');
+
+        $(this).prop('disabled', true);
+
+        $.ajax({
+            url: 'ajax/mail.php',
+            type: 'POST',
+            cache: false,
+            data: $(this).serialize(),
+            success: function (data) {
+                if (!data) {
+                    alert('Error!');
+                }
+                else {
+                    popup.classList.remove('invise');
+                    $('#mail-form').trigger("reset");
+                }
+                $(this).prop('disabled', false);
+            },
+            error: function () {
+                alert('Error!');
+                $(this).prop('disabled', false);
+            }      
+        })
+    }
+
+    else {
+        $('#email').addClass('error');
+    }
 }) 

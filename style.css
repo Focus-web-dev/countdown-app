@@ -446,5 +446,5 @@ button:hover {
 }
 
 .error {
-    box-shadow: 0px 0px 50px var(--red);
+    box-shadow: 0px 0px 25px #b91b1e94;
 }
