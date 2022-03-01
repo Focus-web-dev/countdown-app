@@ -38,3 +38,25 @@ function timer () {
 if (seconds > 0) {
     setInterval(timer, 1000);
 }
+
+/* FORM
+============*/
+
+$("#sendMail").on("click"), function() {
+    let email = $("email").val().trim();
+
+    $.ajax ({
+        url: 'ajax/mail.php',
+        type: 'POST',
+        cache: false,
+        data: email,
+        dataType: 'html',
+        beforeSend: function () {
+            $("send-mail").prop("disabled", true);
+        },
+        success: function (data) {
+            alert(data);
+            $("send-mail").prop("disabled", false);
+        },
+    })
+}

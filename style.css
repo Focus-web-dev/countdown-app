@@ -211,10 +211,6 @@ input {
     align-items: center;
 }
 
-/* .countdown li:not(.dots) {
-    margin-right: 10px;
-} */
-
 .dots {
     margin: 0 5px;
 }
@@ -447,4 +443,8 @@ button:hover {
 
 .invise {
     display: none !important;
+}
+
+.error {
+    box-shadow: 0px 0px 50px var(--red);
 }
