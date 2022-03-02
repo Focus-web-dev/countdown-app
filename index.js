@@ -25,8 +25,8 @@ const popup = document.getElementById('popup');
 [document.getElementById('close-popup'), document.getElementById('crosshair-close-popup')].forEach((el) => {
     el.addEventListener('click', () => {
         popup.classList.add('invise');
-    })
-})
+    });
+});
 
 /* DATE
 ==============*/
@@ -81,7 +81,7 @@ function handleResponse (status) {
 $("#mail-form").submit(function(e) {
     e.preventDefault();
 
-    const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+    const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
     if (EMAIL_REGEXP.test($('#email').val())) {
 
@@ -108,10 +108,10 @@ $("#mail-form").submit(function(e) {
                 handleResponse(false);
                 $(this).prop('disabled', false);
             }      
-        })
+        });
     }
 
     else {
         $('#email').addClass('error');
     }
-})
+});
