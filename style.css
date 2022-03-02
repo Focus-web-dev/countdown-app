@@ -319,6 +319,7 @@ footer {
 }
 
 .form {
+    transform: translateX(-25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -459,10 +460,6 @@ button:hover {
 
 @media screen and (max-width: 768px) {
 
-    .vector-1, .vector-2 {
-        width: 40vw;
-    }
-
     .header {
         margin-top: 100px;
     }
@@ -557,7 +554,7 @@ button:hover {
     .vector-2 {
         background-image: url(svg/vector-2-768.svg);
 
-        background-position: unset;
+        background-position-y: unset;
     }
 
     .vector-1, .vector-2 {
